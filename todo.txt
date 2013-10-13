@@ -1,0 +1,4 @@
+- tighten up CSV import
+- import on other pages
+- send emails
+- user profile pictures

@@ -1,0 +1,19 @@
+<div id="filters-inner">
+<% _.each(filters, function(filter, index) { %>
+<div class="filter filter-<%= index %>">
+  <label for="filter-<%= index %>"><%= filter.column.get('name') %>:</label>
+  <div class="filter-wrapper" id="filter-wrapper-<%= index %>">
+    <%= filter.column.type().filter.widget(filter.filter, index) %>
+    <a href="#" id="filter-remove-<%= index %>" class="filter-remove">x</a>
+  </div>
+</div>
+<% }) %>
+<div class="filter">
+  <select class="add-new-filter">
+    <option>+ Add filter</option>
+    <%  columns.each(function(column) { if (column.type().filter) { %>
+    <option value="<%= column.get('id') %>"><%= column.get('name') %></option>
+    <% } }) %>
+  </select>
+</div>
+</div>

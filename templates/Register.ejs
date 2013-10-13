@@ -1,0 +1,29 @@
+<div id="header">
+  <h1>Clara</h1>
+</div>
+
+<div id="content" class="anonymous"><div id="container-inner">
+  <% if (flashes && flashes.length) {%>
+    <div class="messages">
+    <% for (var i = 0; i < flashes.length; i++) { var flash = flashes[i]; %>
+      <div class="message message-<%= flash.type %>"><%= flash.message %></div>
+    <% } %>
+    </div>
+  <% } %>
+  <form method="post" accept-charset="utf-8">
+    <div class="form-item">
+      <a href="/login?token=<%= token %>">Already have an account?</a>
+    </div>
+    <div class="form-item">
+      <label for="user">Username:</label><input type="text" name="username" />
+    </div>
+    <div class="form-item">
+      <label for="email">Email:</label><input type="text" name="email" value="<%- email %>" />
+    </div>
+    <div class="form-item">
+      <label for="pass">Password</label><input type="password" name="pass" />
+    </div>
+
+    <p><input type="submit" value="Register"></p>
+  </form>
+</div></div>

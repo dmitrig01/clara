@@ -1,0 +1,23 @@
+<div id="import">
+  <div id="import-stages">
+    <% if (stage == 'enter') { %>
+      <strong>Enter data</strong>
+    <% } else { %>
+      Enter data
+    <% } %>
+    &raquo;
+    <% if (stage == 'verify') { %>
+      <strong>Verify data</strong>
+    <% } else { %>
+      Verify data
+    <% } %>
+    &raquo;
+    <% if (stage == 'process') { %>
+      <strong>Process</strong>
+    <% } else { %>
+      Process
+    <% } %>
+  </div>
+  <div id="import-body">
+  </div>
+</div>

@@ -1,0 +1,109 @@
+<div class="table-view">
+  <select class="table-view-add">
+    <option>+ Add column</option>
+    <% columns.each(function(column) { %>
+    <option value="<%= column.get('id') %>"><%= column.get('name') %></option>
+    <% }) %>
+  </select>
+  <table>
+    <thead>
+      <tr>
+        <% for (var i = 0; i < headers.length; i++) { %>
+        <th>
+          <% if (typeof headers[i].column.type().group !== 'undefined') {%>
+            <a id="table-view-group-<%= headers[i].key %>" class="table-view-group" href="#" data-dropdown="#dropdown-<%= headers[i].column.get('type') %>"><%= headers[i].column.get('name') %></a>
+          <% } else { %>
+            <%= headers[i].column.get('name') %>
+          <% } %>
+          <a id="table-view-remove-<%= i %>" class="table-view-remove" href="#">&times;</a>
+          <a id="table-view-order-desc-<%= headers[i].key %>" class="table-view-order" href="#">&uarr;</a>
+          <a id="table-view-order-asc-<%= headers[i].key %>" class="table-view-order" href="#">&darr;</a>
+          <% if (headers[i].aggregator) { %>
+          <a class="table-view-agg" href="#">–</a>
+          <% } %>
+        </th>
+        <% } %>
+      </tr>
+    </thead>
+    <tbody>
+      <% var previousGroup = ""; %>
+      <% for (var i = 0; i < data.length; i++) { %>
+
+      <% if (typeof group !== 'undefined' && previousGroup != data[i]._group) {  %>
+
+        <% if (aggregators && typeof aggregators[previousGroup] !== 'undefined') { %>
+        <tr>
+          <% for (var j = 0; j < headers.length; j++) { %>
+          <td>
+            <%= (headers[j].aggregator && typeof aggregators[previousGroup] !== 'undefined' && typeof aggregators[previousGroup][headers[j].aggregator] !== 'undefined' ? headers[j].column.type().aggregatorFormat(aggregators[previousGroup][headers[j].aggregator]) : '') %>
+          </td>
+          <% } %>
+        </tr>
+        <% } %>
+
+        <tr>
+          <td colspan="<%= headers.length %>"><strong><%= group(data[i]._group) %></strong> <a href="#" class="table-view-removegroup">[x]</a></td>
+        </tr>
+      <% ; previousGroup = data[i]._group; } %>
+
+      <tr id="data-row-<%= data[i].id %>" class="data-row">
+        <% for (var j = 0; j < headers.length; j++) { %>
+        <td><%= headers[j].type.format.html(data[i][headers[j].key]) %></td>
+        <% } %>
+      </tr>
+      <% } %>
+      
+      
+      <% if (typeof group !== 'undefined' && aggregators) { %>
+        <tr>
+          <% for (var j = 0; j < headers.length; j++) { %>
+          <td>
+            <%= (headers[j].aggregator && typeof aggregators[previousGroup] !== 'undefined' && typeof aggregators[previousGroup][headers[j].aggregator] !== 'undefined' ? headers[j].column.type().aggregatorFormat(aggregators[previousGroup][headers[j].aggregator]) : '') %>
+          </td>
+          <% } %>
+        </tr>
+      <% } %>
+
+      <% if (aggregatorTotals) { %>
+        <tr>
+          <% for (var j = 0; j < headers.length; j++) { %>
+          <td>
+            <%= (headers[j].aggregator && typeof aggregatorTotals[headers[j].aggregator] !== 'undefined' ? headers[j].column.type().aggregatorFormat(aggregatorTotals[headers[j].aggregator]) : '') %>
+          </td>
+          <% } %>
+        </tr>
+      <% } %>
+      
+      <% if (data.length == 0) { %>
+      <tr><td colspan="<%= headers.length %>">--- No data ---</td></tr>
+      <% } %>
+    </tbody>
+  </table>
+  <div class="pager">
+    <% if (pages > 0) { %>
+      <% if (page > 1) { %>
+        <a href="#" class="pager-prev">&lt;</a>
+      <% } %>
+      Page <%= page %> of <%= pages %>
+      <% if (page < pages) { %>
+        <a href="#" class="pager-next">&gt;</a>
+      <% } %>
+    <% } %>
+  </div>
+  
+  <% _.each(App.ColumnTypes, function(type, id) { %>
+    <% if (typeof type.group !== 'undefined') {%>
+      <div id="dropdown-<%= id %>" class="dropdown dropdown-tip">
+        <ul class="dropdown-menu">
+          <% _.each(type.group, function(value, key) { %>
+          <li><a href="#" id="dropdown-group-<%= key %>"><%= value %></a></li>
+          <% }) %>
+          <li class="dropdown-divider"></li>
+          <% _.each(typeof type.aggregators !== 'undefined' ? type.aggregators : {}, function(value, key) { %>
+          <li><a href="#" id="dropdown-aggregate-<%= key %>"><%= value %></a></li>
+          <% }) %>
+        </ul>
+      </div>
+    <% } %>
+  <% })%>
+</div>

@@ -1,0 +1,27 @@
+<div id="header">
+  <h1>Clara</h1>
+</div>
+
+<div id="content" class="anonymous">
+  <div id="container-inner">
+    <h2>Please log in</h2>
+    <h3>Don't have an account? <a href="/register">Register</a></h3>
+  <% if (flashes && flashes.length) {%>
+    <div class="messages">
+    <% for (var i = 0; i < flashes.length; i++) { var flash = flashes[i]; %>
+      <div class="message message-<%= flash.type %>"><%= flash.message %></div>
+    <% } %>
+    </div>
+  <% } %>
+  <form method="post" accept-charset="utf-8">
+    <div class="form-item">
+      <label for="user">Username or email address:</label><input type="text" name="user" />
+    </div>
+    <div class="form-item">
+      <label for="pass">Password:</label><input type="password" name="pass" />
+    </div>
+
+    <p><input type="submit" value="Log in"></p>
+  </form>
+  </div>
+</div>

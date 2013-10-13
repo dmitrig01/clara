@@ -1,0 +1,365 @@
+#header {
+  height: 150px;
+  background: #4881BB;
+}
+#header #top-nav {
+  clear: both;
+  position: absolute;
+  right: 100px;
+  top: 67px;
+}
+#header #top-nav li {
+  float: left;
+}
+#header #top-nav li a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #091E49;
+  padding: 7px 13px;
+  border-radius: 15px;
+  margin-left: 10px;
+  font-size: 11px;
+}
+#header #top-nav li a:hover {
+  background-color: #fff;
+  color: #091E49;
+}
+#header h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #fff;
+  position: absolute;
+  top: 50px;
+  left: 100px;
+}
+#navigation-left {
+  position: absolute;
+  top: 128px;
+  left: 100px;
+}
+#navigation-right {
+  position: absolute;
+  top: 128px;
+  right: 100px;
+}
+#navigation li {
+  float: left;
+  margin-right: 10px;
+}
+#navigation li.tab a {
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #091E49;
+  padding: 7px 20px;
+  border-radius: 7px 7px 0 0;
+}
+#navigation-right li.tab a {
+  margin-right: 0;
+}
+#navigation li.view-add a {
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #091E49;
+  padding: 1px 5px 3px 5px;
+  border-radius: 5px;
+}
+#navigation li:hover a,
+#navigation li.tab-active a {
+  background-color: #fff;
+  color: #091E49;
+}
+
+#content {
+  clear: both;
+}
+
+#content-left-wrapper {
+  width: 100%;
+  float: left;
+}
+#content-left {
+  margin-right: 300px;
+  padding: 50px;
+}
+#content-right-wrapper {
+  float: left;
+  width: 300px;
+  margin-left: -300px;
+}
+#content-right {
+  padding-top: 50px;
+}
+.unsaved {
+  background-color: #FFFADC;
+  padding: 10px;
+}
+
+#style-picker {
+  clear: both;
+  overflow: hidden;
+  padding: 17px 0;
+  margin-top: -17px;
+}
+#style-picker li {
+  float: left;
+}
+#style-picker li a {
+  border: 1px solid #ccc;
+  border-right: 0;
+  padding: 12px;
+  background-color: #f0f0f0;
+}
+#style-picker .view-style-disabled a {
+  background-color: #bbb;
+}
+#style-picker li:nth-child(1) a {
+  border-radius: 6px 0 0 6px;
+}
+#style-picker li:last-child a {
+  border-right: 1px solid #ccc;
+  border-radius: 0 6px 6px 0;
+}
+#style-picker li:not(.view-style-disabled):hover a,
+#style-picker li.active-style a {
+  background-color: #fff;
+}
+#filters-inner {
+  clear: both;
+  margin-top: 20px;
+  border-bottom: 1px solid #ccc;
+  margin-right: 50px;
+}
+#filters .filter {
+  border: 1px solid #ccc;
+  border-bottom: 0;
+  padding: 20px;
+}
+#filters .filter label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+
+
+.table-view table {
+  width: 100%;
+}
+.table-view tr {
+  border-bottom: 1px solid #ccc;
+}
+.table-view thead th {
+  padding: 10px;
+  font-weight: bold;
+  text-align: left;
+}
+.table-view tbody tr td {
+  padding: 5px 10px;
+}
+.table-view tbody tr.data-row td {
+  padding: 10px;
+}
+.table-view tbody tr:nth-child(2n+1) {
+  background-color: #f0f0f0;
+}
+.table-view a.add-column {
+  float: right;
+}
+.table-view .pager {
+  padding: 10px;
+}
+
+#map {
+  width: 100%;
+  height: 500px;
+}
+
+.view-calendar h2 {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.view-calendar table {
+  width: 100%;
+}
+.view-calendar th, .view-calendar td {
+  width: 14.28%;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+#data-editor form {
+  border: 1px solid #ccc;
+  border-top: 0;
+}
+.data-editor-row {
+  clear: both;
+  overflow: hidden;
+  height: 30px;
+  border-top: 1px solid #ccc;
+}
+.data-editor-row-left {
+  float: left;
+  width: 150px;
+  text-align: right;
+  padding: 9px 10px;
+  background-color: #E1E1E1;
+  margin-left: -100%;
+}
+.data-editor-row-right-wrapper {
+  float: left;
+  width: 100%;
+}
+.data-editor-row-right {
+  padding: 3px 10px;
+  height: 24px;
+  background-color: #F4F4F4;
+  margin-left: 170px;
+}
+.data-editor-row-right input {
+  width: 40%;
+  min-width: 200px;
+}
+.data-editor-row-submit {
+  background-color: #C1F1C1;
+  padding: 9px 10px 0;
+}
+
+div#users-list {
+  width: 80%;
+  margin: 50px auto 0;
+}
+
+div.user {
+  border: 1px solid #525252;
+  padding: 0;
+  margin: 0 20px 20px 0;
+  width: 400px;
+  float: left;
+  overflow: hidden;
+}
+div.user img {
+  float: left;
+}
+div.user-info {
+  float: left;
+  margin-left: 20px;
+}
+div.user-username {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+div.user-email {
+  font-size: 14px;
+  margin-top: 10px;
+}
+div.user-invites {
+  clear: both;
+  margin-top: 10px;
+}
+div#users-list form {
+  clear: both;
+  margin-top: 20px;
+}
+div#users-list form input {
+  font-size: 14px;
+}
+#application-list {
+  width: 500px;
+  margin: 50px auto 0;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  padding: 50px 50px 30px;
+}
+#application-list li {
+  padding-bottom: 20px;
+  list-style: disc;
+}
+
+.Barchart .label {
+  font-size: 12px;
+}
+.Barchart .ylabels .tick line {
+  fill: none;
+  stroke: #222;
+  stroke-width: 1px;
+  shape-rendering: crispEdges;
+}
+.Barchart path.domain {
+  fill: none;
+  stroke: #222;
+  stroke-width: 1px;
+  shape-rendering: crispEdges;
+}
+.Barchart .bars rect.bar {
+  fill: #97E8A2;
+}
+
+#import {
+  width: 80%;
+  margin: 20px auto;
+}
+#import-stages {
+  font-size: 24px;
+}
+#import textarea {
+  width: 100%;
+  height: 50%;
+}
+#import h3 {
+  font-size: 18px;
+  margin: 40px 0 20px;
+}
+
+#import table {
+  width: 100%;
+}
+#import tr {
+  border-bottom: 1px solid #ccc;
+}
+#import thead th {
+  padding: 5px;
+  font-weight: bold;
+  text-align: left;
+}
+#import thead th input {
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+#import tbody tr td {
+  padding: 10px;
+}
+#import tbody tr:nth-child(2n+1) {
+  background-color: #f0f0f0;
+}
+
+.progress {
+  margin-top: 20px;
+  width: 60%;
+  height: 30px;
+  border: 1px solid #ccc;
+}
+.progress-inner {
+  height: 30px;
+  background-color: #D4EEFF;
+  width: 1%;
+}
+
+#content.anonymous #container-inner {
+  margin: 50px 100px;
+}
+#content.anonymous #container-inner h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+#content.anonymous #container-inner h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}

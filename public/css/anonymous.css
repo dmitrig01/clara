@@ -1,0 +1,14 @@
+#container.anonymous {
+  width: 500px;
+  padding: 30px;
+  border: 1px solid #ccc;
+  margin: 100px auto 0;
+  font-size: 20px;
+}
+#container.anonymous label {
+  font-weight: normal;
+  color: #666;
+}
+#container.anonymous input {
+  font-size: 20px;
+}

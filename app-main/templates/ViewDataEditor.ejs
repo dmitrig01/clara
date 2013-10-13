@@ -1,0 +1,20 @@
+<form>
+  <% columns.each(function(column) { %>
+  <div class="data-editor-row" id="data-editor-row-<%= column.get('id') %>">
+    <div class="data-editor-row-right-wrapper">
+      <div class="data-editor-row-right data-editor-row-widget-wrapper">
+        <%= column.type().widget.html(values[column.get('id')]) %>
+      </div>
+    </div>
+    <div class="data-editor-row-left">
+      <strong><%= column.get('name') %></strong>
+      <a href="#" class="column-edit" id="column-edit-<%= column.get('id') %>">[e]</a>
+      <a href="#" class="column-delete" id="column-delete-<%= column.get('id') %>">[-]</a>
+      <strong>:</strong>
+    </div>
+  </div>
+  <% }) %>
+  <div class="data-editor-row data-editor-row-submit">
+    <input type="submit" value="Save" /> <a href="#" class="data-editor-cancel">Cancel</a>
+  </div>
+</form>

@@ -1,0 +1,21 @@
+<div id="header">
+  <ul id="top-nav">
+    <li><a href="/logout">Log out</a></li>
+  </ul>
+  <h1>Applications</h1>
+</div>
+<div id="content">
+  <div id="application-list">
+    <ul>
+      <% for (var i = 0; i < applications.length; i++) { %>
+      <li><a href="/a/<%- applications[i].id %>"><%- applications[i].name %></a></li>
+      <% } %>
+      <li>
+        <form method="post" action="/import" accept-charset="utf-8">
+          <input type="text" name="name" value="" id="name" />
+          <input type="submit" value="&rarr;" />
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>

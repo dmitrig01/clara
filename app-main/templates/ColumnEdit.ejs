@@ -1,0 +1,19 @@
+<div id="column-edit">
+  <form>
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" name="name" value="<%= column.get('name') %>" id="name" />
+    </div>
+    <div>
+      <label for="type">Type:</label>
+      <select name="type" id="type">
+        <% _.each(App.ColumnTypes, function(v, k) { %>
+        <option<%= (column.get('type') == k ? ' selected' : '')%> value="<%= k %>"><%= v.name %></option>
+        <% }) %>
+      </select>
+    </div>
+    <div>
+      <input type="submit" value="Submit" />
+    </div>
+  </form>
+</div>

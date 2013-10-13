@@ -1,0 +1,14 @@
+<div id="view-chart">
+  <select id="view-chart-key">
+    <% _.each(options, function(value, key) { %>
+    <option value="<%= key %>"<%= (key == chartKey ? ' selected="selected"' : '') %>><%= value %></option>
+    <% }) %>
+  </select>
+  <select id="view-chart-type">
+    <option value="bar"<%= ('bar' == chartType ? ' selected="selected"' : '') %>>Bar</option>
+    <option value="line"<%= ('line' == chartType ? ' selected="selected"' : '') %>>Line</option>
+  </select>
+  <div>
+    <canvas id="view-chart-chart" width="600" height="400"></canvas>
+  </div>
+</div>

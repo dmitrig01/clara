@@ -1,0 +1,5 @@
+<ul>
+  <% columns.each(function(column) { %>
+    <li><strong><%= column.get('name') %></strong>: <%= column.type().format.html(data.get(column.get('id'))) %></li>
+  <% }); %>
+</ul>

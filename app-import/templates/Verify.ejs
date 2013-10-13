@@ -1,0 +1,30 @@
+<form>
+<table class="new-application-data">
+<thead>
+<tr class="new-application-data-header">
+<% for (var i = 0; i < headers.length; i++) { %>
+  <th><input value="<%- headers[i] %>" /></th>
+<% } %>
+</tr>
+<tr class="new-application-data-type">
+  <% for (var i = 0; i < types.length; i++) { %>
+    <th><%= columnTypes(types[i]) %></th>
+  <% } %>
+</tr>
+<tr class="new-application-data-checkbox">
+  <td colspan="<%= headers.length %>">
+    <label><input type="checkbox" id="firstRowHeaders" <%= (firstRowHeaders ? 'checked="checked"' : '') %> /> First row is header</label>
+  </td>
+</tr>
+</thead>
+<tbody>
+<% for (var i = (firstRowHeaders ? 1 : 0); i < data.length; i++) { %>
+<tr>
+  <% for (var j = 0; j < data[i].length; j++) { %><td><%= data[i][j] %></td><% } %>
+</tr>
+<% } %>
+</tbody>
+</table>
+
+<p><input type="submit" value="Continue &rarr;"></p>
+</form>

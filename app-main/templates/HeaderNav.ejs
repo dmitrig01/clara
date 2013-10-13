@@ -1,0 +1,9 @@
+<ul id="navigation-left">
+  <% views.each(function(view) { %>
+  <li class="tab view<%= view.get('id') == currentView ? ' tab-active' : '' %>"><a href="#view/<%= view.get('id') %>"><%= view.get('name') %></a></li>
+  <% }) %>
+  <li class="view-add"><a href="#">+</a></li>
+</ul>
+<ul id="navigation-right">
+  <li class="tab view<%= currentView == '_users' ? ' tab-active' : '' %>"><a href="#users">Users</a></li>
+</ul>

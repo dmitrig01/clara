@@ -1,0 +1,41 @@
+<div class="view-calendar">
+<h2>
+  <a href="#" class="view-calendar-navigate" id="view-calendar-navigate-previous-year">&laquo;</a>
+  <a href="#" class="view-calendar-navigate" id="view-calendar-navigate-previous-month">&lt;</a>
+  <%= monthName %> <%= year %>
+  <a href="#" class="view-calendar-navigate" id="view-calendar-navigate-next-month">&gt;</a>
+  <a href="#" class="view-calendar-navigate" id="view-calendar-navigate-next-year">&raquo;</a>
+</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Sunday</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+      <th>Saturday</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% var day = 0; %>
+    <% for (var row = 1; row <= Math.ceil((days + firstDay - 1) / 7); ++row) { %>
+      <tr>
+        <% for (var col = 1; col <= 7; ++col) { %>
+          <% if ((day == 0 && col < firstDay+1) || (day >= days)) { %>
+            <td></td>
+          <% } else { day++; %>
+            <td>
+              <%= day %>
+              <% if (items[day]) { %>
+                <%= items[day].join('') %>
+              <% } %>
+            </td>
+          <% } %>
+        <% } %>
+      </tr>
+    <% } %>
+  </tbody>
+</table>
+</div>
