@@ -1,5 +1,5 @@
 var forever = require('forever'),
-    child = new(forever.Monitor)('app.js', {
+    child = new(forever.Monitor)('app.coffee', {
         'silent': false,
         'pidFile': 'pids/app.pid',
         'watch': true,
