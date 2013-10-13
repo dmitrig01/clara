@@ -5,7 +5,7 @@ bcrypt = require 'bcrypt'
 
 module.exports = (conn, operators) ->
   operators.LoadUser = (req, res, next) ->
-    req.session.uid = 'e9340889-0741-4aee-b2f9-409c4573530b'
+    # req.session.uid = 'e9340889-0741-4aee-b2f9-409c4573530b'
     if req.session.uid
       r.table('users').get(req.session.uid).run conn, (err, user) ->
         if !user then req.session.uid = req.user = null else req.user = user
