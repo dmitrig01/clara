@@ -2,6 +2,7 @@ var forever = require('forever'),
     child = new(forever.Monitor)('app.coffee', {
         'silent': false,
         'pidFile': 'pids/app.pid',
+        'command': 'coffee',
         'watch': true,
         'watchDirectory': '.',      // Top-level directory to watch from.
         'watchIgnoreDotFiles': true, // whether to ignore dot files
